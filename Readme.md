@@ -1,7 +1,7 @@
 #关于 FarBox 模板 GrayshadeM 的使用说明
 
 搬迁到 FarBox 后，一直想自己做个模板，奈何一直没有时间。  
-近日看到 [Rock](http://rock.farbox.com/ "Rock 的博客") 制作的从 Octopress 模板 [Greyshade](http://shashankmehta.in/archive/2012/greyshade.html "Octopress 模板： Greyshade") 移植过来的 FarBox 模板，甚是喜爱，但发现有不少地方不方便自定义，幸好 Rock 提供了模板代码([GitHub](https://github.com/roccox/farbox_temp.git "Rock 从 Octopress 移植的 Greyshade 主题")),于是 Clone 一份，修改部分内容，并于 2013年07月12日 晚上开始修改，听着 豆瓣FM 的 [程序猿之音](http://douban.fm/?cid=1001343 "豆瓣FM - 程序猿之音") ，学习 FarBox 主题的制作文档，大约折腾了三个多小时，在次日凌晨 2 点多时完成初版，将其命名为 GrayshadeM 。
+近日看到 [Rock](http://rock.farbox.com/ "Rock 的博客") 制作的从 Octopress 模板 [Greyshade](http://shashankmehta.in/archive/2012/greyshade.html "Octopress 模板： Greyshade") 移植过来的 FarBox 模板，甚是喜爱，但发现有不少地方不方便自定义，幸好 Rock 提供了模板代码([GitHub](https://github.com/roccox/farbox_temp.git "Rock 从 Octopress 移植的 Greyshade 主题")),于是 Clone 一份，于 2013年07月12日 晚上开始修改，听着 豆瓣FM 的 [程序猿之音](http://douban.fm/?cid=1001343 "豆瓣FM - 程序猿之音") ，学习 FarBox 主题的制作文档，大约折腾了三个多小时，在次日凌晨 2 点多时完成初版，将其命名为 GrayshadeM 。
 
 ##模板功能说明
 
