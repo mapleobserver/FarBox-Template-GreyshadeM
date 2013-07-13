@@ -6,60 +6,96 @@
     <div class="mid-col-container">
         <div id="content" class="inner">
             <article class="post" id="posts">
-                <h2 class="title">关于模板的说明</h2>
+                <h1>关于 FarBox 模板 GrayshadeM 的使用说明</h1>
+				<p>搬迁到 FarBox 后，一直想自己做个模板，奈何一直没有时间。<br>
+				近日看到 <a href="http://rock.farbox.com/" title="Rock 的博客">Rock</a> 制作的从 Octopress 模板 <a href="http://shashankmehta.in/archive/2012/greyshade.html" title="Octopress 模板： Greyshade">Greyshade</a> 移植过来的 FarBox 模板，甚是喜爱，但发现有不少地方不方便自定义，幸好 Rock 提供了模板代码(<a href="https://github.com/roccox/farbox_temp.git" title="Rock 从 Octopress 移植的 Greyshade 主题">GitHub</a>),于是 Clone 一份，修改部分内容，并于 2013年07月12日 晚上开始修改，听着 豆瓣FM 的 <a href="http://douban.fm/?cid=1001343" title="豆瓣FM - 程序猿之音">程序猿之音</a> ，学习 FarBox 主题的制作文档，大约折腾了三个多小时，在次日凌晨 2 点多时完成初版，将其命名为 GrayshadeM 。</p>
+				<h2>模板功能说明</h2>
+				<ul>
+					<li>页面宽度自适应，兼容移动设备，如 iPad 、 iPhone</li>
+					<li>自动识别 links.md 、 about.md 为 Links 与 About 页面</li>
+					<li>文章与照片页面，自动识别 comment_js.md 的第三方社交评论或者用 FarBox 的评论系统</li>
+				</ul>
+				<h2>网站自定义参数配置</h2>
+				<p>如果需要修改本模板的自定义项，需要在网站目录（比如 <code>FarBox/My Blog/</code> ）下放置一个名为 <code>site.md</code> 的文件，如下是一个范例：</p>
+					<pre><code>title: IF404
+					subtitle: 折腾模板的地方
+					author: 枫叶向风
+					authorinfo: 枫叶向风：手艺人、爱喵可是老婆不让养、已婚胖子、业余作家、伪程序员、技术不算太宅、在光明的迷途中寻找出路
+					somethingtitle: 一些说明
+					something: 可自定义统计代码、Gravatar头像和一些社交链接。
+					gravatar: your@email.com
+					facebook: http://facebook.com
+					google: http://plus.google.com
+					twitter: http://twitter.com
+					github: http://github.com
+					linkedin: http://linkedin.com
+					pinterest: http://pinterest.com
+					delicious: http://delicious.com
+					pinboard: http://pinboard.com
+					instagram: http://instagram.com
+					weibo: http://weibo.com
+					qq: http://t.qq.com
+					douban: http://douban.com
+					fanfou: http://fanfou.com
+					zhihu: http://zhihu.com
+					rss: /feed
+					analytics: &lt;script type="text/javascript"&gt;var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-xxxxxxx-x']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s)})();&lt;/script&gt;
+					</code></pre>
 
-                <div class="entry-content">
-                    <div class="p_part">
-
-                <p>搬迁到 FarBox 后，一直想自己做个模板，奈何一直没有时间。近日看到 <a href="http://rock.farbox.com/" target="_blank">Rock</a>制作的从 Octopress 模板<a href="http://shashankmehta.in/archive/2012/greyshade.html">Greyshade</a> 移植过来的 FarBox 模板，甚是喜爱，但发现有不少地方不方便自定义，幸好 Rock 提供了模板代码(<a href="https://github.com/roccox/farbox_temp.git" target="_blank">GitHub</a>),于是 Clone 一份，修改部分内容，并于 2013年07月12日晚开始修改，</p>
-                <ul>
-                    <li>页面宽度自适应，兼容移动设备，如iPad、iPhone</li>
-                    <li>自动识别links.md、about.md为Links与About页面</li>
-                    <li>文章与照片页面，自动识别comment_js.md的第三方社交评论或者用FarBox的评论系统</li>
-                </ul>
-
-                <h2 id="modify_description">修改网站描述与其它项目?</h2>
-                <p>如果需要修改本模板的自定义项，需要在网站目录（比如FarBox/My Blog/）下放置一个名为<code>site.md</code>的文件，如下是一个范例:</p>
-
-<pre>
-title: The Real
-domain: blog.somethingreal.info
-author: Rock
-</pre>
-
-                <p>格式说明:</p>
- <pre>
-title: 页面名称
-domain: 域名，用于生成feed时使用
-author: 作者，用于生成feed时使用
-
-这里是写网站的描述，不易过长，会出现在顶部图片（题图）的文字中。
-以上的每一项都不是必须的，按需修改。
-</pre>
-
-
-
-                <p>如果configword必须要换行的，则要遵从一个更严谨些的规则（YAML）。</p>
-<pre>
----
-configword: |
-    保证前面的空格，第一行
-    保证前面的空格，第二行
-    不要忘记foreword:后面的 |
----
-</pre>
-
-<h2>注意事项：</h2>
-
-                <p>1，如果使用YAML规则，<b>请确保文章的第一行是以三个<code>-</code>+换行开始的，并且三个<code>-</code>+换行后才能开始写正文,
-                    以及<code>:</code>是英文字符并且后面有空格。</b>
-                </p>
-
-                <p>
-                    2，具体的设置项按需即可，不需要全部设定的。
-                </p>
-                    </div>
-                </div>
+				<p>格式说明：</p>
+				<p><strong>title</strong></p>
+				<blockquote>
+				<p>添加该属性，网站左侧将显示博客名称。</p>
+				</blockquote>
+				<p><strong>subtitle</strong></p>
+				<blockquote>
+				<p>添加该属性，网站左侧博客名称下方将显示网站副标题。</p>
+				</blockquote>
+				<p><strong>author</strong></p>
+				<blockquote>
+				<p>添加该属性，网站底部将显示版权信息，包含作者笔名。</p>
+				</blockquote>
+				<p><strong>authorinfo</strong></p>
+				<blockquote>
+				<p>添加该属性，网站左侧将显示作者自我介绍。</p>
+				</blockquote>
+				<p><strong>somethingtitle</strong></p>
+				<blockquote>
+				<p>添加该属性，网站左侧将显示补充描述文字的标题。</p>
+				</blockquote>
+				<p><strong>something</strong></p>
+				<blockquote>
+				<p>添加该属性，网站左侧将显示补充描述文字，建议不要太长。注意：只有该属性存在时， <code>somethingtitle</code> 才能显示。</p>
+				</blockquote>
+				<p><strong>gravatar</strong></p>
+				<blockquote>
+				<p>添加该属性，填入在 Gravatar 注册的邮箱，将显示作者的 Gravatar 头像。</p>
+				</blockquote>
+				<p><strong>社交链接</strong></p>
+				<blockquote>
+				<p>目前支持 Facebook、Google+、Twitter、GitHub、Linkedin、Pinterest、Delicious、Pinboard、Instagram、新浪微博、腾讯微博、豆瓣、饭否、知乎、RSS订阅 。对应属性请参考上面的范例。<br>
+				默认显示为不同颜色圆形图案，如果要显示 Logo ，可在博客文件夹中新建 <code>\images\social\</code> 文件夹，放入和属性相同名字的 png 文件，注意图片尺寸不要超过 30x30 。我已存放一份在 GitHub 中。</p>
+				</blockquote>
+				<p><strong>统计代码</strong></p>
+				<blockquote>
+				<p>添加 <code>analytics</code> 属性，将统计代码<strong>压缩成一行</strong>放入。</p>
+				</blockquote>
+				<h2>文章自定义属性</h2>
+				<p><strong>Link属性</strong></p>
+				<blockquote>
+				<p>格式： <code>Link: http://www.google.com</code><br>
+				文章头部加入 <code>Link</code> 属性后，在首页、存档等页面中，该文章标题前会出现“[链接]”标记，点击标题链接将访问自定义的链接，而不是访问该文章内容页，右下角的“阅读全文”也会变成“访问链接”。<br>
+				该功能相当于轻博客中的“链接”。</p>
+				</blockquote>
+				<p><strong>Url属性</strong></p>
+				<blockquote>
+				<p>格式： <code>Url: a-link</code><br>
+				文章头部加入 <code>Url</code> 属性后，可自定义该文章访问链接地址，比如文章 <code>a-url-link.md</code> 的默认访问链接为 <code>xxx.farbox.com/post/a-url-link</code> ，添加该属性后变成 <code>xxx.farbox.com/post/a-link</code> 。</p>
+				</blockquote>
+				<h2>版本更新记录</h2>
+				<ul>
+					<li>2013-07-13 创建主题。</li>
+				</ul>
             </article>
         </div>
     </div>
