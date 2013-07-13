@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>{% block title %}{{ site.configs.title }} {% endblock %}</title>
+
+
+    <!-- http://t.co/dKP3o1e -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel='alternate' type='application/rss+xml' title='atom 1.0' href='/feed' />
+    
+    <link href="/favicon.png" rel="shortcut icon">
+    <link href="/template/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="/template/css/style.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+    <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-col">
+            <div class="intrude-less">
+            <header id="header" class="inner">
+                <div class="profilepic">  
+                    {% if site.configs.gravatar %}
+					<script src="/template/js/md5.js"></script>
+                    <script type="text/javascript">
+                    document.write("<img src='http://0.gravatar.com/avatar/" + MD5("{{ site.configs.gravatar }}") + "?s=160' alt='Profile Picture' style='width: 160px;'");
+                    </script>
+					{% endif %}
+                </div>
+				{% if site.configs.title %}
+                <h1><a href="/">{{ site.configs.title }}</a></h1>
+				{% endif %}
+				{% if site.configs.subtitle %}
+                <p class="subtitle">{{ site.configs.subtitle }}</p>
+				{% endif %}
+                <nav id="main-nav">
+                    <ul class="main-navigation">
+                        <li><a href="/">首页</a></li>
+                        {% if has('posts') %}
+                        <li><a href="/category">分类</a></li>
+                        <li><a href="/archive">存档</a></li>
+                            {% if site.tags %}
+                            <li><a href="/tags">标签</a></li>
+                            {% endif %}
+                        {% endif %}
+
+                        {% if has('images') and has('posts')%}
+                        <li><a href="/folder/">相册</a></li>
+                        {% endif %}
+                        
+                        {% if has('links.md') %}
+                        <li><a href="/links.md">链接</a></li>
+                        {% endif %}
+
+                        {% if has('about.md') %}
+                        <li><a href="/about.md">关于</a></li>
+                        {% endif %}
+
+
+                    </ul>
+                </nav>
+                <nav id="sub-nav">
+                <div class="social">
+					{% if site.configs.facebook %}
+					<a class="facebook" href="{{ site.configs.facebook }}" title="Facebook">Facebook</a>
+					{% endif %}
+					{% if site.configs.google %}
+					<a class="google" href="{{ site.configs.google }}" title="Google+">Google+</a>
+					{% endif %}
+					{% if site.configs.twitter %}
+                    <a class="twitter" href="{{ site.configs.twitter }}" title="Twitter">Twitter</a>
+					{% endif %}
+					{% if site.configs.github %}
+                    <a class="github" href="{{ site.configs.github }}" title="GitHub">GitHub</a>
+					{% endif %}
+					{% if site.configs.linkedin %}
+					<a class="linkedin" href="{{ site.configs.linkedin }}" title="Linkedin">Linkedin</a>
+					{% endif %}
+					{% if site.configs.pinterest %}
+					<a class="pinterest" href="{{ site.configs.pinterest }}" title="Pinterest">Pinterest</a>
+					{% endif %}
+					{% if site.configs.delicious %}
+					<a class="delicious" href="{{ site.configs.delicious }}" title="Delicious">Delicious</a>
+					{% endif %}
+					{% if site.configs.pinboard %}
+					<a class="pinboard" href="{{ site.configs.pinboard }}" title="Pinboard">Pinboard</a>
+					{% endif %}
+					{% if site.configs.instagram %}
+					<a class="instagram" href="{{ site.configs.instagram }}" title="Instagram">Instagram</a>
+					{% endif %}
+					{% if site.configs.weibo %}
+					<a class="weibo" href="{{ site.configs.weibo }}" title="新浪微博">新浪微博</a>
+					{% endif %}
+					{% if site.configs.qq %}
+					<a class="qq" href="{{ site.configs.qq }}" title="腾讯微博">腾讯微博</a>
+					{% endif %}
+					{% if site.configs.douban %}
+					<a class="douban" href="{{ site.configs.douban }}" title="豆瓣">豆瓣</a>
+					{% endif %}
+					{% if site.configs.fanfou %}
+					<a class="fanfou" href="{{ site.configs.fanfou }}" title="饭否">饭否</a>
+					{% endif %}
+					{% if site.configs.zhihu %}
+					<a class="zhihu" href="{{ site.configs.zhihu }}" title="知乎">知乎</a>
+					{% endif %}
+					{% if site.configs.rss %}
+                    <a class="rss" href="{{ site.configs.rss }}" title="RSS">RSS</a>
+					{% endif %}
+                </div>
+                </nav>
+
+                <br/>
+				{% if site.configs.author %}
+                <section>
+                    <h2>关于作者</h2>
+                    <p>{{ site.configs.authorinfo }}</p>
+                </section>
+				{% endif %}
+
+                </br>
+				{% if site.configs.something %}
+                <section>
+					{% if site.configs.somethingtitle %}
+                    <h2>{{ site.configs.somethingtitle }}</h2>
+					{% endif %}
+                    <p>{{ site.configs.something }}</p>
+                </section>
+				{% endif %}
+            </header>               
+            </div>
+        </div>  
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+<script src="/template/js/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+    $('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+</body>
+</html>
+
+

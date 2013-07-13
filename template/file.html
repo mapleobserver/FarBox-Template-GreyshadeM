@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}{{ file.title }}{% endblock %}
+
+{% set next_one = get_connected_one('>') %}
+{% set pre_one = get_connected_one('<') %}
+
+{% block content %}
+
+{{ bread_nav(file.path, '/folder/') }}
+
+ <div class="container80">
+
+
+    <div id="image">
+        <div class="info">
+            <span class="date">{{ file.date | date('%Y-%m-%d %H:%M') }}</span>
+        </div>
+
+        <img src="{{ file.url }}" />
+
+        <div class="connected_images">
+            {% if pre_one %}
+                <a href="/file/{{ pre_one.path }}" class="pre">
+                    <span>&lt;{{ pre_one.title }}</span>
+                </a>
+            {% else %}
+                <a href="#pre_one" class="pre" id="pre_one">
+                    <span>&lt;没有上一张了</span>
+                </a>
+            {% endif %}
+
+            {% if next_one %}
+                <a href="/file/{{ next_one.path }}" class="next">
+                    <span>&gt;{{ next_one.title }}</span>
+                </a>
+            {% else %}
+                <a href="#next_one" class="next" id="next_one">
+                    <span>&gt;没有下一张了</span>
+                </a>
+            {% endif %}
+        </div>
+
+    </div>
+
+
+    {% include 'include/comments.html' %}
+
+ </div>
+
+{% endblock %}

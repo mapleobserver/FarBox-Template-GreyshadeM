@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}关于模板的说明{% endblock %}
+
+{% block content %}
+<div class="mid-col">
+    <div class="mid-col-container">
+        <div id="content" class="inner">
+            <article class="post" id="posts">
+                <h2 class="title">关于模板的说明</h2>
+
+                <div class="entry-content">
+                    <div class="p_part">
+
+                <p>搬迁到 FarBox 后，一直想自己做个模板，奈何一直没有时间。近日看到 <a href="http://rock.farbox.com/" target="_blank">Rock</a>制作的从 Octopress 模板<a href="http://shashankmehta.in/archive/2012/greyshade.html">Greyshade</a> 移植过来的 FarBox 模板，甚是喜爱，但发现有不少地方不方便自定义，幸好 Rock 提供了模板代码(<a href="https://github.com/roccox/farbox_temp.git" target="_blank">GitHub</a>),于是 Clone 一份，修改部分内容，并于 2013年07月12日晚开始修改，</p>
+                <ul>
+                    <li>页面宽度自适应，兼容移动设备，如iPad、iPhone</li>
+                    <li>自动识别links.md、about.md为Links与About页面</li>
+                    <li>文章与照片页面，自动识别comment_js.md的第三方社交评论或者用FarBox的评论系统</li>
+                </ul>
+
+                <h2 id="modify_description">修改网站描述与其它项目?</h2>
+                <p>如果需要修改本模板的自定义项，需要在网站目录（比如FarBox/My Blog/）下放置一个名为<code>site.md</code>的文件，如下是一个范例:</p>
+
+<pre>
+title: The Real
+domain: blog.somethingreal.info
+author: Rock
+</pre>
+
+                <p>格式说明:</p>
+ <pre>
+title: 页面名称
+domain: 域名，用于生成feed时使用
+author: 作者，用于生成feed时使用
+
+这里是写网站的描述，不易过长，会出现在顶部图片（题图）的文字中。
+以上的每一项都不是必须的，按需修改。
+</pre>
+
+
+
+                <p>如果configword必须要换行的，则要遵从一个更严谨些的规则（YAML）。</p>
+<pre>
+---
+configword: |
+    保证前面的空格，第一行
+    保证前面的空格，第二行
+    不要忘记foreword:后面的 |
+---
+</pre>
+
+<h2>注意事项：</h2>
+
+                <p>1，如果使用YAML规则，<b>请确保文章的第一行是以三个<code>-</code>+换行开始的，并且三个<code>-</code>+换行后才能开始写正文,
+                    以及<code>:</code>是英文字符并且后面有空格。</b>
+                </p>
+
+                <p>
+                    2，具体的设置项按需即可，不需要全部设定的。
+                </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    {% include 'include/footer.html' %}
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'errors/error_base.html' %}
+{% block title %}On Processing...{% endblock %}
+
+{% block content %}
+
+    <div id="error">
+        <h1>
+            {% if info.email %}Email Sent{% elif info.ok %}Done{% else %}Error{% endif %}
+        </h1>
+
+        <div class="content">
+            <p>
+                {{ info.error or info.ok }}
+                {% if info.ok and info.email %}<span class="red">{{ info.email }}</span>{% endif %}
+            </p>
+
+        </div>
+
+    </div>
+
+{% endblock %}

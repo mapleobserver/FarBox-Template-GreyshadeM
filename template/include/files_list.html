@@ -1,0 +1,40 @@
+{% if folder %}
+    {{ bread_nav(folder.path, '/folder/') }}
+{% endif %}
+
+<div id="images_container">
+
+<ul class="image_list" id="image_list">
+{% for file in files %}
+    <li {% if file.content_type == 'folder' %}class="folder"{% endif %}>
+        <a href="/file/{{file.path}}">
+            <img src='{{ file.url }}?width=320&height=214&fixed=true' title="{{ file.title }}, {{ file.images_count }} photos in it." />
+            {% if file.content_type == 'folder' %}
+            <span>{{ file.title }} <small>({{ file.images_count }})</small></span>
+            {% endif %}
+        </a>
+    </li>
+{% endfor %}
+</ul>
+
+{% include 'include/paginator.html' %}
+
+
+<script type="text/javascript">
+
+    function images_auto_margin(){
+        var images_e = document.getElementById('image_list');
+        images_e.style.marginLeft = 0;
+        var width = document.width || document.body.clientWidth;
+        if (images_e && width > 330){
+            images_e.style.marginLeft = ( width% 336) /2 + 'px';
+        }
+    }
+
+    images_auto_margin();
+
+    window.onresize = images_auto_margin;
+
+</script>
+
+</div>

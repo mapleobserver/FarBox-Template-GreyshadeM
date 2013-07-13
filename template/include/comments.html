@@ -1,0 +1,99 @@
+{% set custom_comment=get_text_file('comment_js').raw_content %}
+{% if custom_comment %}
+    <div id="disqus_thread" class="comments"></div>
+    {{ custom_comment }}
+{% else %}
+
+<div id="fb_comments_container">
+    <ul id="fb_comments">
+        {% set comments = get_comments(context_doc) %}
+        {% for comment in comments %}
+            <li class="comment">
+                <div class="avatar">
+                    <img src="http://www.gravatar.com/avatar/{{ comment.email_md5 }}">
+                </div>
+                <div class="c_content">
+
+                    <div class="author">
+                        <a href="{{comment.site or '#'}}"><b>{{ comment.author or '匿名'}}</b></a>
+                        <small>{{ comment.date | date("%Y-%m-%d %H:%M:%S") }}</small>
+                    </div>
+
+                    <div>
+                        {{ comment.content }}
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+    {% if comment_allowed %}
+    <form id="fb_new_comment" method="post" action="#fb_new_comment">
+
+        <textarea name="content">{{ comment_content }}</textarea>
+
+        {% if error %}<span class="comment_error"> {{ error }}</span> {% endif %}
+
+        <div class="input_body">
+            <ul>
+                <li>
+                    <label>称呼:</label>
+                    <input type="text" name="author" id="c_author">
+                </li>
+                <li>
+                    <label>邮箱:</label>
+                    <input type="text" name="email" id="c_email">
+                </li>
+                <li>
+                    <label>网站:</label>
+                    <input type="text" name="site" id="c_site">
+                </li>
+                <li>
+                    <input type="submit" value="发表评论" class="c_button" id="c_submit"/>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </form>
+
+    <script src="http://resource.farbox.com/swfstore/swfstore.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://resource.farbox.com/css/comment.css?version={{ resource_version }}">
+
+
+    <script type="text/javascript">
+
+        var c_submit = document.getElementById('c_submit');
+        var c_author = document.getElementById('c_author');
+        var c_email = document.getElementById('c_email');
+        var c_site = document.getElementById('c_site');
+
+        c_submit.onclick = function(){
+            info_store.set('name', c_author.value);
+            info_store.set('email', c_email.value);
+            info_store.set('site', c_site.value);
+        };
+        var info_store = new SwfStore({
+            namespace: 'farbox',
+            swf_url: 'http://resource.farbox.com/swfstore/storage.swf',
+            debug: true,
+            onready: function(){
+                c_author.value = info_store.get('name') || '';
+                c_email.value = info_store.get('email') || '';
+                c_site.value = info_store.get('site') || '';
+
+            },
+            onerror: function(){
+            }
+        });
+
+    </script>
+
+    {% endif %}
+
+</div>
+
+
+{% endif %}

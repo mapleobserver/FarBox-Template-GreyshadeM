@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}{{ category.title }}{% endblock %}
+
+{% set cats = get_folders("/") %}
+
+{% block content %}
+<div class="mid-col">
+    <div class="mid-col-container">
+        <div id="content" class="inner">
+        {% if not posts%}
+			{% for cat in cats %}
+				{% set posts = get_posts(path=cat.path) %}
+				{% if posts %}
+	            <section class="archives"><h1 class="year">{{ cat.title | upper }}</h1>
+	                {% for post in posts %}
+	                <article>
+	                    <div class="meta">
+	                        <span class="date">{{ post.date | date("%Y-%m-%d") }}</span>
+	                        <br>
+	                    </div>
+	                    <h1 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+	                </article>
+	                {% endfor %}
+	            </section>
+	            {% endif %}
+			{% endfor %}
+		{% else %}
+	    {% include 'include/posts_list.html' %}
+		{% endif %}
+        </div>
+    </div>
+    {% include 'include/footer.html' %}
+</div>
+{% endblock %}

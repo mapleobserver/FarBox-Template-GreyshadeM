@@ -1,0 +1,19 @@
+{% if post and post.metadata.cover_link %}
+    {% set cover_link = post.metadata.cover_link %}
+{% elif site and site.configs.cover_link %}
+    {% set cover_link = site.configs.cover_link %}
+{% endif %}
+
+<footer id="footer" class="inner"><p>
+  	{% if site.configs.author %}
+	Copyright © 2013 - {{ site.configs.author }} -
+	{% endif %}
+  	<span class="credit">Powered By <a target='_blank' href="http://www.farbox.com">FarBox</a> - Theme By <a href="http://rock.farbox.com">Rock</a> & <a href="http://blog.if404.com">枫叶向风</a>
+    <br>
+			- - - <a href="/template">克隆模板</a>.-.<a href="/template-readme">一定要看模板说明</a>  
+            .-.<a href="#">Github</a> - - -
+	<br>
+	</span>
+	{{ site.configs.analytics }}
+</footer>
+

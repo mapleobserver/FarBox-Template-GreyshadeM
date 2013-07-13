@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}{{ tags | join(' ') }}{% endblock %}
+
+{% block content %}
+{%if not tags %}
+<div class="mid-col">
+    <div class="mid-col-container">
+        <h2 class="title">Tags:</h2>
+        <br>
+		{% for tag_name, tag_count in site.tags %}
+        <div class="tag">
+		<a href="/tags/{{ tag_name }}">{{ tag_name }} </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% include 'include/footer.html' %}
+</div>
+{% else %}
+    {% include 'include/posts_list.html' %}
+{% endif %}
+{% endblock %}
