@@ -1,4 +1,4 @@
-key: FarBox-Template-GrayshadeM-2013071403
+key: FarBox-Template-GrayshadeM-2013071501
 title: FarBox模板：GrayshadeM
 domain: http://blog.if404.com
 
@@ -6,3 +6,4 @@ domain: http://blog.if404.com
 - 2013-07-14 发觉正文和标签之间太靠近了，有点怪，秉承“感觉怪就赶紧改改”的精神（病），于是在 post.thml 中两者之间加了个 `</br>` 。
 - 2013-07-14 经@taresky 提醒，发现在列表页中，“下一页”没和“上一页”、“存档”水平对齐，修改 paginator.html 代码后修复成功。
 - 2013-07-14 添加FontAwesome字体，个别地方会显示类似图片其实是字符的图案，比如“上一页”“下一页”旁边的箭头。
+- 2013-07-15 发现相册整个样式排版有问题，都堆在左边了，修改了 file.html 和 file-list.html 两个文件，让相册也显示在中间了，不过样式还没调整，所以依然很难看，而且感觉探测文件和显示的逻辑上有点不对，另外找时间调整看看。目前的显示效果可以在这里查看：[模板折腾处-相册](http://if404template.farbox.com/folder/ "模板折腾处-相册")
