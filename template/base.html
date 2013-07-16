@@ -60,6 +60,11 @@
                         <li><a href="/folder/">相册</a></li>
                         {% endif %}
                         
+						{% if has('isaid.md') %}
+						{% set isaid_post = get_post('isaid.md') %}
+						<li><a href="/isaid.md">{{ isaid_post.title }}</a></li>
+						{% endif %}
+						
                         {% if has('links.md') %}
                         <li><a href="/links.md">链接</a></li>
                         {% endif %}
