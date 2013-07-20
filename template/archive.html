@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% set total_posts = get_posts(limit=300, sort=1) %}
+{% set total_posts = get_posts(limit=300, sort=0) %}
 {% set entries = group(total_posts, 'date:year') %}
 
 {% block content %}
@@ -23,7 +23,11 @@
                         </span>
                         
                     </div>
+					{% if post.metadata.link %}
+					<h1 class="title">[链接]<a href="{{post.metadata.link}}" target="_blank">{{ post.title }}</a></h1>
+					{% else %}
                     <h1 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+					{% endif %}
                 </article>
                 {% endfor %}
             </section>
