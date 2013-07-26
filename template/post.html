@@ -26,8 +26,15 @@
                                 <a href="/tags/{{ tag }}">{{ tag }}</a>
                             {% endfor %}
                         </div>
+						</br>
                     {% endif %}
                 </div>
+				{% if site.configs.socialshare %}
+					<div class="socialshare">
+						{{ site.configs.socialshare }}
+					</div>
+					</br>
+				{% endif %}
             </article>
         </div>
     {% include 'include/comments.html' %}

@@ -44,6 +44,7 @@ Tags: FarBox 主题 模板 说明文档
     zhihu: http://zhihu.com
     rss: /feed
     analytics: <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-xxxxxxx-x']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s)})();</script>
+	socialshare: <!-- JiaThis Button BEGIN --><div class="jiathis_style_24x24"><a class="jiathis_button_qzone"></a><a class="jiathis_button_tsina"></a><a class="jiathis_button_tqq"></a><a class="jiathis_button_weixin"></a><a class="jiathis_button_renren"></a><a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a><a class="jiathis_counter_style"></a></div><script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1374815515868166" charset="utf-8"></script><!-- JiaThis Button END -->
 
 格式说明：
 
@@ -73,7 +74,10 @@ Tags: FarBox 主题 模板 说明文档
 > 默认显示为不同颜色圆形图案，如果要显示 Logo ，可在博客文件夹中新建 `\images\social\` 文件夹，放入和属性相同名字的 png 文件，注意图片尺寸不要超过 30x30 。我已存放一份在 GitHub 中，显示效果可以参考我的[主题折腾专用博客](http://if404template.farbox.com/ "IF404主题折腾专用博客")。
 
 **统计代码**
-> 添加 `analytics` 属性，将统计代码**压缩成一行**放入。
+> 添加 `analytics` 属性，将统计代码 **压缩成一行** 放入。
+
+**社交分享按钮**
+> 添加 `socialshare` 属性，将 JiaThis 等社交分享按钮的代码 **压缩成一行** 放入。
 
 **关于网站的 Favicon 图标**
 > 如果要添加自定义的 Favicon 图标，请直接将 `favicon.png` 文件放在根目录下。
@@ -108,3 +112,4 @@ Tags: FarBox 主题 模板 说明文档
 - 2013-07-20 修复在*分类(category.html)*和*归档(archive.html)*页面中，跳转外链的文章链接没有指向外链的 bug 。
 - 2013-07-21 修复在*分类(category.html)*和*标签(tags.html)*页面中，网页标题显示有误的 bug ，感谢 @taresky 童鞋的反馈。同时将*标签(tags.html)*和*文章(post.html)*页面中的“Tags:”汉化为中文。
 - 2013-07-23 修复因 *feed.html* 文件引起的在 Feedly 等订阅工具中，文章访问链接显示不全和图片无法显示的问题。
+- 2013-07-26 修改 *post.html* 文件，方便用户通过在 *site.md* 中加入 `socialshare` 属性，添加 JiaThis 等社交分享按钮。
