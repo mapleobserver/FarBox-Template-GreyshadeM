@@ -1,4 +1,4 @@
-key: FarBox-Template-GrayshadeM-2013072601
+key: FarBox-Template-GrayshadeM-2013072801
 title: FarBox模板：GrayshadeM
 domain: http://blog.if404.com
 
@@ -12,3 +12,4 @@ domain: http://blog.if404.com
 - 2013-07-21 修复在*分类(category.html)*和*标签(tags.html)*页面中，网页标题显示有误的 bug ，感谢 @taresky 童鞋的反馈。同时将*标签(tags.html)*和*文章(post.html)*页面中的“Tags:”汉化为中文。
 - 2013-07-23 修复因 *feed.html* 文件引起的在 Feedly 等订阅工具中，文章访问链接显示不全和图片无法显示的问题。
 - 2013-07-26 修改 *post.html* 文件，方便用户通过在 *site.md* 中加入 `socialshare` 属性，添加 JiaThis 等社交分享按钮。
+- 2013-07-28 社交链接增加QQ、QQ群、微信和EMail，其中微信的展示效果是，鼠标移到微信图标上时，顶部作者头像会变成微信二维码。

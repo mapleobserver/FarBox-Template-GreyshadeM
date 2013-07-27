@@ -39,9 +39,14 @@ Tags: FarBox 主题 模板 说明文档
     instagram: http://instagram.com
     weibo: http://weibo.com
     qq: http://t.qq.com
+    qq2: http://wpa.qq.com/msgrd?v=3&uin=123456&site=qq&menu=yes
+    qqqun: http://wp.qq.com/wpa/qunwpa?idkey=1234567890abcdefghijklmn
+    qqqunname: QQ群名字
+    weixin: 我叫微信
     douban: http://douban.com
     fanfou: http://fanfou.com
     zhihu: http://zhihu.com
+    email: mailto:123@abc.com
     rss: /feed
     analytics: <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-xxxxxxx-x']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s)})();</script>
 	socialshare: <!-- JiaThis Button BEGIN --><div class="jiathis_style_24x24"><a class="jiathis_button_qzone"></a><a class="jiathis_button_tsina"></a><a class="jiathis_button_tqq"></a><a class="jiathis_button_weixin"></a><a class="jiathis_button_renren"></a><a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a><a class="jiathis_counter_style"></a></div><script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1374815515868166" charset="utf-8"></script><!-- JiaThis Button END -->
@@ -70,8 +75,24 @@ Tags: FarBox 主题 模板 说明文档
 > 添加该属性，填入在 Gravatar 注册的邮箱，将显示作者的 Gravatar 头像。
 
 **社交链接**
-> 目前支持 Facebook、Google+、Twitter、GitHub、Linkedin、Pinterest、Delicious、Pinboard、Instagram、新浪微博、腾讯微博、豆瓣、饭否、知乎、RSS订阅 。对应属性请参考上面的范例。  
+> 目前支持 Facebook、Google+、Twitter、GitHub、Linkedin、Pinterest、Delicious、Pinboard、Instagram、新浪微博、腾讯微博、QQ、QQ群、微信、豆瓣、饭否、知乎、EMail、RSS订阅 。对应属性请参考上面的范例。
+
 > 默认显示为不同颜色圆形图案，如果要显示 Logo ，可在博客文件夹中新建 `\images\social\` 文件夹，放入和属性相同名字的 png 文件，注意图片尺寸不要超过 30x30 。我已存放一份在 GitHub 中，显示效果可以参考我的[主题折腾专用博客](http://if404template.farbox.com/ "IF404主题折腾专用博客")。
+
+**QQ社交链接 & QQ群社交链接**
+> QQ社交链接属性为 `qq2` ，通过 [wp.qq.com](http://wp.qq.com/ "QQ在线状态") 获取代码，例如：  
+> `<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=123456&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:123456:53" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>`  
+> 在属性中填入上述范例代码中的 `http://wpa.qq.com/msgrd?v=3&uin=123456&site=qq&menu=yes`  
+> 该功能无法实现QQ在线离线状态的图片切换，点击社交图标即可弹出QQ对话窗口。  
+> QQ群社交链接属性为 `qqqun` ，设置方法和QQ社交链接一样。  
+> 另有 `qqqunname` 属性，可添加QQ群的群名称，鼠标覆盖社交图标时会显示。
+> 显示效果可以参考我的[主题折腾专用博客](http://if404template.farbox.com/ "IF404主题折腾专用博客")。
+
+**微信社交链接**
+> 微信社交链接的属性为 `weixin` ，填入微信个人或者公众账号即可。  
+> **务必要在 `images/social/` 文件夹中放入二维码文件，命名为 `weixinqrcode.png` ，二维码图片会被自动压缩或拉伸到 160 像素宽高的正方形图片。**  
+> 鼠标覆盖微信图标时，会显示微信账号，同时*顶部作者头像会变成微信二维码图片*，移开鼠标则恢复显示头像。点击微信图标将在新窗口打开二维码图片，方便手机用户操作。  
+> 显示效果可以参考我的[主题折腾专用博客](http://if404template.farbox.com/ "IF404主题折腾专用博客")。  
 
 **统计代码**
 > 添加 `analytics` 属性，将统计代码 **压缩成一行** 放入。
@@ -113,3 +134,4 @@ Tags: FarBox 主题 模板 说明文档
 - 2013-07-21 修复在*分类(category.html)*和*标签(tags.html)*页面中，网页标题显示有误的 bug ，感谢 @taresky 童鞋的反馈。同时将*标签(tags.html)*和*文章(post.html)*页面中的“Tags:”汉化为中文。
 - 2013-07-23 修复因 *feed.html* 文件引起的在 Feedly 等订阅工具中，文章访问链接显示不全和图片无法显示的问题。
 - 2013-07-26 修改 *post.html* 文件，方便用户通过在 *site.md* 中加入 `socialshare` 属性，添加 JiaThis 等社交分享按钮。
+- 2013-07-28 个别用户和基友反馈需要QQ在线状态、邮箱和微信社交链接，于是有了，顺手多了个QQ群，虽然我想应该没几个FarBox用户会用到这个。折腾一晚上，最后让微信二维码显示在顶部作者头像的地方。涉及文件：*base.html*、*screen.css*。显示效果可以参考我的[主题折腾专用博客](http://if404template.farbox.com/ "IF404主题折腾专用博客")。
