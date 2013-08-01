@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% set total_posts = get_posts(limit=300, sort=0) %}
-{% set entries = group(total_posts, 'date:year') %}
+{% set entries = group(total_posts, 'date:year', True) %}
 
 {% block content %}
 <div class="mid-col">

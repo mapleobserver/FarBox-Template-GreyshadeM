@@ -48,6 +48,8 @@ Tags: FarBox 主题 模板 说明文档
     zhihu: http://zhihu.com
     email: mailto:123@abc.com
     rss: /feed
+    alipay: http://me.alipay.com/mapleobserver
+	highlight: true
     analytics: <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-xxxxxxx-x']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s)})();</script>
 	socialshare: <!-- JiaThis Button BEGIN --><div class="jiathis_style_24x24"><a class="jiathis_button_qzone"></a><a class="jiathis_button_tsina"></a><a class="jiathis_button_tqq"></a><a class="jiathis_button_weixin"></a><a class="jiathis_button_renren"></a><a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a><a class="jiathis_counter_style"></a></div><script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1374815515868166" charset="utf-8"></script><!-- JiaThis Button END -->
 
@@ -94,6 +96,19 @@ Tags: FarBox 主题 模板 说明文档
 > 鼠标覆盖微信图标时，会显示微信账号，同时*顶部作者头像会变成微信二维码图片*，移开鼠标则恢复显示头像。点击微信图标将在新窗口打开二维码图片，方便手机用户操作。  
 > 显示效果可以参考我的[主题折腾专用博客](http://if404template.farbox.com/ "IF404主题折腾专用博客")。  
 
+**支付宝付费功能**
+> 通过添加 `alipay` 属性，可以在文章底部显示支付宝付款内容，网友若觉得文章有用，可以通过支付宝收款主页向博客作者付款。  
+> 属性值为支付宝收款主页功能提供的链接，请通过支付宝获取，别直接填我的地址啊^_^
+
+**代码高亮**
+> 添加 `highlight` 属性，可以使文章中的代码高亮着色，属性值任意，比如 `true` 。有需要代码高亮的童鞋可以使用。
+> 该功能利用 *Pygments* 功能实现，我采用的是 Pygments 的 monokai 样式，本模板控制代码高亮着色的 css 文件为 `highlight.css` 。  
+> 效果参考[这里](http://if404template.farbox.com/post/fen-lei/test-highlight "代码高亮效果")。  
+> 有兴趣自定义高亮样式的童鞋可以参考：  
+> [Farbox 代码高亮语法](https://github.com/hepochen/FarBox-Doc/blob/master/docs/%E4%B9%A6%E5%86%99/%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE.md "FarBox 代码高亮语法")
+> [Pygments 代码高亮样式](http://pygments.org/ "Pygments 代码高亮样式")
+> [Pygments CSS文件](https://github.com/richleland/pygments-css "Pygments CSS文件")
+
 **统计代码**
 > 添加 `analytics` 属性，将统计代码 **压缩成一行** 放入。
 
@@ -125,7 +140,7 @@ Tags: FarBox 主题 模板 说明文档
 
 ##版本更新记录
 - 2013-07-13 创建主题。
-- 2013-07-14 发觉正文和标签之间太靠近了，有点怪，秉承“感觉怪就赶紧改改”的精神（病），于是在 post.thml 中两者之间加了个 `</br>` 。
+- 2013-07-14 发觉正文和标签之间太靠近了，有点怪，秉承“感觉怪就赶紧改改”的精神（病），于是在 post.html 中两者之间加了个 `</br>` 。
 - 2013-07-14 经@taresky 提醒，发现在列表页中，“下一页”没和“上一页”、“存档”水平对齐，修改 paginator.html 代码后修复成功。
 - 2013-07-14 添加 FontAwesome 字体，个别地方会显示类似图片其实是字符的图案，比如“上一页”“下一页”旁边的箭头。
 - 2013-07-15 发现相册整个样式排版有问题，都堆在左边了，修改了 file.html 和 file-list.html 两个文件，让相册也显示在中间了，不过样式还没调整，所以依然很难看，而且感觉探测文件和显示的逻辑上有点不对，另外找时间调整看看。目前的显示效果可以在这里查看：[模板折腾处-相册](http://if404template.farbox.com/folder/ "模板折腾处-相册")
@@ -135,3 +150,6 @@ Tags: FarBox 主题 模板 说明文档
 - 2013-07-23 修复因 *feed.html* 文件引起的在 Feedly 等订阅工具中，文章访问链接显示不全和图片无法显示的问题。
 - 2013-07-26 修改 *post.html* 文件，方便用户通过在 *site.md* 中加入 `socialshare` 属性，添加 JiaThis 等社交分享按钮。
 - 2013-07-28 个别用户和基友反馈需要QQ在线状态、邮箱和微信社交链接，于是有了，顺手多了个QQ群，虽然我想应该没几个FarBox用户会用到这个。折腾一晚上，最后让微信二维码显示在顶部作者头像的地方。涉及文件：*base.html*、*screen.css*。显示效果可以参考我的[主题折腾专用博客](http://if404template.farbox.com/ "IF404主题折腾专用博客")。
+- 2013-07-28 修改 *post.html* ，增加通过支付宝付费支持作者的功能。
+- 2013-08-01 修改存档页面(*archive.html*），使文章按照年份和月份倒序排列，之前是年份正序，月份倒序，略别扭。
+- 2013-08-01 在 *base.html* 增加 *highlight.css* 样式控制代码，通过 *site.md* 可控制文章中的代码是否高亮显示。顺便修改了一下 `pre` 样式（*screen.css*）的背景色(#282722)和字体颜色(#fff)。
