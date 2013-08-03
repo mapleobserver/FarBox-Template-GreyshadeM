@@ -20,12 +20,21 @@
     <link href="/template/css/style.css" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="/template/css/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="/template/css/fancybox/jquery.fancybox.pack.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
     <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
     <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("a[href$='.jpg'],a[href$='.jpeg'],a[href$='.png'],a[href$='.gif'],a[href$='.bmp'],a[href$='.JPG'],a[href$='.JPEG'],a[href$='.PNG'],a[href$='.GIF'],a[href$='.BMP']").attr('rel','group-images').fancybox({
+				openEffect	: 'none',
+				closeEffect	: 'none'
+			});
+		});
+	</script>
 
 </head>
 <body>
@@ -140,6 +149,11 @@
 					{% endif %}
 					{% if site.configs.weixin %}
 					<a class="weixin" href="/images/social/weixinqrcode.png" title="{{ site.configs.weixin }}" target="_blank" onmouseover="weixin_mouseOver()" onmouseout="weixin_mouseOut()">微信</a>
+					<script type="text/javascript">
+						$(document).ready(function(){
+							$(".weixin").removeAttr("rel");
+						});
+					</script>
 					{% endif %}
 					{% if site.configs.douban %}
 					<a class="douban" href="{{ site.configs.douban }}" title="豆瓣">豆瓣</a>
@@ -182,15 +196,6 @@
         {% block content %}
         {% endblock %}
     </div>
-
-
-<script src="/template/js/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-    $('.fancybox').fancybox();
-})(jQuery);
-</script> <!-- Delete or comment this line to disable Fancybox -->
-
 </body>
 </html>
 
