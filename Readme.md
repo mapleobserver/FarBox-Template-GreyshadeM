@@ -6,6 +6,8 @@ Tags: FarBox 主题 模板 说明文档
 
 ---
 
+> **强烈建议看完本文再决定是否克隆，本文底部有克隆模板的专用链接。**
+
 #关于 FarBox 模板 GrayshadeM 的使用说明
 
 搬迁到 FarBox 后，一直想自己做个模板，奈何一直没有时间。  
@@ -138,6 +140,15 @@ Tags: FarBox 主题 模板 说明文档
 > `status` 属性是为了避免这个文件的内容出现在正常文章列表中，只要随便设置不等于 `public`、`secret`、`private`的值即可，比如我设置 `status: isaid` 。当然，如果你觉得没关系，这个属性可以不设置。  
 > 可以直接放入微博秀的代码，比如我的[主题折腾专用博客](http://if404template.farbox.com/isaid.md)
 
+##克隆模板
+看到这里，如果您决定使用本模板，请点击：  
+
+---
+
+[克隆模板](/template "克隆模板")
+
+---
+
 ##版本更新记录
 - 2013-07-13 创建主题。
 - 2013-07-14 发觉正文和标签之间太靠近了，有点怪，秉承“感觉怪就赶紧改改”的精神（病），于是在 post.html 中两者之间加了个 `</br>` 。
@@ -153,4 +164,5 @@ Tags: FarBox 主题 模板 说明文档
 - 2013-07-28 修改 *post.html* ，增加通过支付宝付费支持作者的功能。
 - 2013-08-01 修改存档页面(*archive.html*），使文章按照年份和月份倒序排列，之前是年份正序，月份倒序，略别扭。
 - 2013-08-01 在 *base.html* 增加 *highlight.css* 样式控制代码，通过 *site.md* 可控制文章中的代码是否高亮显示。顺便修改了一下 `pre` 样式（*screen.css*）的背景色(#282722)和字体颜色(#fff)。
-- 2013-08-03 增加 Fancybox 特效，点击文中图片链接和相册图片时会以灯箱模式浏览图片。文章中的图片需要带有图片链接才有效果。效果可参考：[一次有点蛋疼的Kindle PaperWhite购买经历](http://blog.if404.com/post/life/2013-04-03-yi-ci-you-dian-dan-teng-dekindlepaperwhite-gou-mai-jing-li)
+- 2013-08-03 增加 Fancybox 特效，点击文中图片链接和相册图片时会以灯箱模式浏览图片。文章中的图片需要带有图片链接才有效果。效果可参考：[一次有点蛋疼的Kindle PaperWhite购买经历](http://blog.if404.com/post/life/2013-04-03-ci-you-dian-dan-teng-de-kindlepaperwhitegou-mai-jing-li)
+- 2013-09-04 修改模板底部声明，将“克隆模板”功能移到模板说明中，避免网站底部出现太多与使用者网站无关的内容。
