@@ -166,3 +166,4 @@ Tags: FarBox 主题 模板 说明文档
 - 2013-08-01 在 *base.html* 增加 *highlight.css* 样式控制代码，通过 *site.md* 可控制文章中的代码是否高亮显示。顺便修改了一下 `pre` 样式（*screen.css*）的背景色(#282722)和字体颜色(#fff)。
 - 2013-08-03 增加 Fancybox 特效，点击文中图片链接和相册图片时会以灯箱模式浏览图片。文章中的图片需要带有图片链接才有效果。效果可参考：[一次有点蛋疼的Kindle PaperWhite购买经历](http://blog.if404.com/post/life/2013-04-03-ci-you-dian-dan-teng-de-kindlepaperwhitegou-mai-jing-li)
 - 2013-09-04 修改模板底部声明，将“克隆模板”功能移到模板说明中，避免网站底部出现太多与使用者网站无关的内容。
+- 2014-02-22 修复存档页面文章排序问题，依次按照年份-日期倒序排列。修改涉及到 *archive.thml* 第 3 行的 `get_posts` 函数。
