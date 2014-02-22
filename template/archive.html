@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% set total_posts = get_posts(limit=300, sort=0) %}
+{% set total_posts = get_posts(limit=3000, sort='desc') %}
 {% set entries = group(total_posts, 'date:year', True) %}
 
 {% block content %}
