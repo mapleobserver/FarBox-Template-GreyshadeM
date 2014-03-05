@@ -19,3 +19,4 @@ domain: http://blog.if404.com
 - 2013-08-03 增加 Fancybox 特效，点击文中图片链接和相册图片时会以灯箱模式浏览图片。文章中的图片需要带有图片链接才有效果。效果可参考：[一次有点蛋疼的Kindle PaperWhite购买经历](http://blog.if404.com/post/life/2013-04-03-yi-ci-you-dian-dan-teng-dekindlepaperwhite-gou-mai-jing-li)
 - 2013-09-04 修改模板底部声明，将“克隆模板”功能移到模板说明中，避免网站底部出现太多与使用者网站无关的内容。
 - 2014-02-22 修复存档页面文章排序问题，依次按照年份-日期倒序排列。修改涉及到 *archive.thml* 第 3 行的 `get_posts` 函数。
+- 2014-03-05 升级到新版 Farbox 后，由于通过修改根目录下的 comment_js.md 文件来添加第三方评论系统的方式停用了，导致升级后会变回默认评论系统。通过在 *include* 文件夹内的 *comment.html* 中添加 `<!--scripts_for_doc-->` ，已升级的用户请在 Farbox 后台的 *模板引擎* - *插入脚本* ，将第三方评论系统代码粘贴到第二个输入框中。该解决方案目前会导致同时出现第三方评论框和默认评论框，待 Farbox 升级所有用户系统后，再重新调整。
