@@ -7,7 +7,7 @@
 <div class="mid-col">
     <div class="mid-col-container">
         <div id="content" class="inner">
-        {% if not posts%}
+
 			{% for cat in cats %}
 				{% set posts = get_posts(path=cat.path) %}
 				{% if posts %}
@@ -28,9 +28,7 @@
 	            </section>
 	            {% endif %}
 			{% endfor %}
-		{% else %}
-	    {% include 'include/posts_list.html' %}
-		{% endif %}
+
         </div>
     </div>
     {% include 'include/footer.html' %}
